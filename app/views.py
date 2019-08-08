@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def crud_candidatos(request):
+    return render(request, 'app/crud_candidatos.html', {})
