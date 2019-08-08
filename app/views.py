@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Vaga
 
-def crud_candidatos(request):
-    return render(request, 'app/crud_candidatos.html', {})
+def vagas(request):
+    vagas = Vaga.objects.all()
+    return render(request, 'app/index.html', {'vagas': vagas})
