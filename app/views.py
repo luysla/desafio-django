@@ -3,10 +3,6 @@ from .models import Vaga, Candidato
 from .forms import CandidatoForm
 from django.shortcuts import redirect
 
-#def candidatos(request):
-#   candidatos = Candidato.objects.all()
-#    return render(request, 'app/index.html', {'candidato': candidato})
-
 def index(request):
 	candidatos = Candidato.objects.all()	
 	return render(request, 'app/index.html', {'candidatos': candidatos})

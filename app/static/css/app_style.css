@@ -1,0 +1,13 @@
+html,body{
+	font-family: 'Lobster';
+}
+
+.container-fluid{
+	padding: 20px;
+}
+
+.form{
+	background-color: #F5F5F5;
+	padding: 20px;
+	margin-top: 20px;
+}
