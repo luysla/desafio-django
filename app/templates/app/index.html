@@ -1,23 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
 		<title>Página inicial</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'css/app_style.css' %}">
 	</head>
 	<body>
-		<form>
-			<div class="form-group">
-				<input class="form-control form-control-sm" type="text" placeholder="Nome">
-				{% for vaga in vagas %}
-				<select class="form-control form-control-sm">
-  					<option>{{ vaga.nome_vaga }}</option>
-				</select>
+		<div class="container-fluid">
+			<div class="text-center">
+				<h3>Lista de candidatos</h3>
+				{% for candidato in candidatos %}
+					{{ candidato.nome_candidato }}
 				{% endfor %}
-				<label for="curriculoFile">Adicione um arquivo</label>
-    			<input type="file" class="form-control-file" id="curriculoFile"><br>
-    			<button type="button" class="btn btn-success">Adicionar</button>
+				<a href="{% url 'novo_candidato' %}"><button type="button" class="btn btn-success">+</button></a>
 			</div>
-		</form>
+		</div>
 	</body>
 </html>
